@@ -1,0 +1,21 @@
+# Example user unit. Install: copy to ~/.config/systemd/user/, then
+#   systemctl --user daemon-reload && systemctl --user enable --now memory-recall-embed
+# Paths use systemd specifiers: %h is the user's home directory.
+# Assumes the repo is checked out at %h/agent-memory-recall and `uv sync --extra embed` was run there.
+[Unit]
+Description=memory-recall embedding server (local, 127.0.0.1)
+After=network.target
+
+[Service]
+Environment=EMBED_HOST=127.0.0.1
+Environment=EMBED_PORT=8790
+Environment=EMBED_IDLE_TIMEOUT=3600
+# Optional overrides (one KEY=VALUE per line): EMBED_MODEL, EMBED_DEFAULT_DIMS
+EnvironmentFile=-%h/.config/memory-recall/embed.env
+WorkingDirectory=%h/agent-memory-recall
+ExecStart=%h/agent-memory-recall/.venv/bin/python embed/embed_server.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
