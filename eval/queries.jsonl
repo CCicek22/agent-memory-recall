@@ -1,0 +1,40 @@
+{"q": "my CI keeps restoring a stale dependency cache after I changed the package versions", "kind": "nl", "expect": "ci-cache-key-lockfile"}
+{"q": "a test that fails randomly on CI blocks every merge, what should the team do with it", "kind": "nl", "expect": "ci-quarantine-flaky-tests"}
+{"q": "the nightly backup has run for a year but nobody has ever tried restoring one, is that a problem", "kind": "nl", "expect": "backup-restore-drill"}
+{"q": "if the server room floods would the nightly snapshots still exist anywhere", "kind": "nl", "expect": "backup-offsite-copy"}
+{"q": "how many old snapshots should I keep and for how long", "kind": "nl", "expect": "backup-retention-tiers"}
+{"q": "my script reported success even though the first command in the pipeline crashed", "kind": "nl", "expect": "shell-pipefail-hides-errors"}
+{"q": "I ran a command and then checked the last status but the value came from something else", "kind": "nl", "expect": "shell-capture-exit-status"}
+{"q": "I edited a shell script while a job was running it and the job went haywire", "kind": "nl", "expect": "shell-replace-script-atomically"}
+{"q": "my scheduled job works in my terminal but does nothing when the scheduler runs it", "kind": "nl", "expect": "cron-absolute-paths"}
+{"q": "when the upstream service returns errors, how long should my client wait before trying again", "kind": "nl", "expect": "api-retry-backoff-jitter"}
+{"q": "a payment request timed out and I don't know if it went through, can I safely resend it", "kind": "nl", "expect": "api-idempotency-key"}
+{"q": "one slow HTTP dependency hung our whole worker pool", "kind": "nl", "expect": "api-timeouts-everywhere"}
+{"q": "the database refuses connections as soon as we add more app instances", "kind": "nl", "expect": "db-pool-size-cap"}
+{"q": "how do I rename a column without breaking the old app version that is still running during deploy", "kind": "nl", "expect": "db-expand-contract-migration"}
+{"q": "a transaction stays open while we wait for an external API and locks pile up", "kind": "nl", "expect": "db-short-transactions"}
+{"q": "I need to rewrite my pushed feature branch, what is the safe way to overwrite the remote", "kind": "nl", "expect": "git-force-with-lease"}
+{"q": "I accidentally committed a password, is deleting that commit enough", "kind": "nl", "expect": "git-secret-rotation"}
+{"q": "a list I passed as a default keeps growing between calls to my function", "kind": "nl", "expect": "python-mutable-default-arg"}
+{"q": "my async web handler is slow under load even though everything awaits, a blocking call must be hiding", "kind": "nl", "expect": "python-blocking-call-in-async"}
+{"q": "adding up prices as floats gives totals that are off by a cent", "kind": "nl", "expect": "python-money-decimal"}
+{"q": "the nightly job silently stopped running and nobody noticed for a week", "kind": "nl", "expect": "monitoring-heartbeat-alert"}
+{"q": "before shipping to everyone, how do I decide whether a new release is safe to keep", "kind": "nl", "expect": "deploy-canary-rollback"}
+{"q": "a new feature misbehaves in production, how do I turn it off without redeploying", "kind": "nl", "expect": "deploy-feature-flag-kill-switch"}
+{"q": "I am moving a domain to a new server next week, what should I change in DNS beforehand", "kind": "nl", "expect": "dns-lower-ttl-before-cutover"}
+{"q": "our HTTPS certificate expired on a Sunday because renewal stopped working without any alert", "kind": "nl", "expect": "tls-renewal-timer-check"}
+{"q": "the app's service account has owner rights on the whole project, how should I narrow that", "kind": "nl", "expect": "security-least-privilege-service-account"}
+{"q": "the list page fires hundreds of tiny database queries, one per row", "kind": "nl", "expect": "perf-n-plus-one-queries"}
+{"q": "after I updated a product price the site still shows the old one from the cache", "kind": "nl", "expect": "cache-invalidate-on-write"}
+{"q": "reports show the wrong day for orders placed late at night in another country", "kind": "nl", "expect": "time-store-utc"}
+{"q": "after an outage, how should the team write up what happened without blaming someone", "kind": "nl", "expect": "incident-blameless-postmortem"}
+{"q": "github actions pin version", "kind": "kw", "expect": "ci-pin-actions-to-major"}
+{"q": "shell quoting spaces filenames", "kind": "kw", "expect": "shell-quote-expansions"}
+{"q": "pagination cursor offset", "kind": "kw", "expect": "api-cursor-pagination"}
+{"q": "foreign key index delete", "kind": "kw", "expect": "db-index-foreign-keys"}
+{"q": "commit message", "kind": "kw", "expect": "git-commit-message-why"}
+{"q": "pytest tmp_path parallel", "kind": "kw", "expect": "python-pytest-tmp-path"}
+{"q": "unhandled promise rejection", "kind": "kw", "expect": "js-unhandled-rejection"}
+{"q": "structured logging fields", "kind": "kw", "expect": "logging-structured-fields"}
+{"q": "alert grouping", "kind": "kw", "expect": "monitoring-alert-grouping"}
+{"q": "profiling optimize", "kind": "kw", "expect": "perf-measure-before-optimize"}
