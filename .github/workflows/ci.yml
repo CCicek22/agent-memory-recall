@@ -16,7 +16,7 @@ jobs:
         python-version: ["3.12", "3.13"]
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10
+      - uses: astral-sh/setup-uv@v10.4.0
       - name: Install (core + dev, no embed extra)
         run: uv sync --group dev --python ${{ matrix.python-version }}
       - name: Unit tests (no network)
