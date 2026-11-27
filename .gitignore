@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.scratch/
+*.egg-info/
+dist/
+build/
+# runtime state written by the hook and server; never commit real recall logs
+state/
+recall.jsonl
+injections.jsonl
+eval/results/
