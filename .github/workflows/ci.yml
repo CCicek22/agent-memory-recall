@@ -1,0 +1,25 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v10
+      - name: Install (core + dev, no embed extra)
+        run: uv sync --group dev --python ${{ matrix.python-version }}
+      - name: Unit tests (no network)
+        run: uv run pytest
+      - name: Demo eval, keyword mode only (no embedding server)
+        run: uv run python eval/run_eval.py
